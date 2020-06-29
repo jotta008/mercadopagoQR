@@ -75,7 +75,7 @@ $(document).ready(function() {
 					// para recibir las notificaciones en tu endpoint público.
 
 					var orderJSON ={"external_reference": external_reference,
-									"notification_url": "https://mercadopagoqrjosecirer.herokuapp.com/api/notifications/get/index.php",
+									"notification_url": "https://mercadopagoqrjosecirer.herokuapp.com/api/notifications",
 									"items" : items
 									};
 
@@ -343,8 +343,8 @@ $(document).ready(function() {
 		$.post("api/store/create/",{json:JSON.stringify(storeJSON)},function(results){
 			console.log("Crea store:");
 			console.log(results);
-			// $("#responseStore").text(JSON.stringify(results));
-			$("#responseStore").text('hola');
+			$("#responseStore").text(JSON.stringify(results));
+			// $("#responseStore").text('hola');
 		});
 	});
 
