@@ -19,4 +19,5 @@ $url="https://api.mercadopago.com/pos";
 
 curl_call("get","$url?external_id=$external_id&access_token=$access_token","");
 
+
 ?>

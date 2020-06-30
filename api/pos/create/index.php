@@ -19,4 +19,5 @@ $url ="https://api.mercadopago.com/pos";
 
 curl_call("post","$url?access_token=$access_token",$json);
 
+
 ?>
