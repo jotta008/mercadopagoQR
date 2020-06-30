@@ -17,7 +17,7 @@
 
 
 $(document).ready(function() {
-	
+	// alert('dads')
 	// Define 10 minutos de timeout de una orden
 	var orderTimeout = 60 * 10;
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 					// para recibir las notificaciones en tu endpoint público.
 
 					var orderJSON ={"external_reference": external_reference,
-									"notification_url": "https://mercadopagoqrjosecirer.herokuapp.com/api/notifications",
+									"notification_url": "https://zondaescuelademanejo.com.ar/mpqr/api/notifications",
 									"items" : items
 									};
 
@@ -326,17 +326,17 @@ $(document).ready(function() {
 		// Modifica el storeJSON con la estructura necesaria para crear una Store correctamente.
 
 		var storeJSON = {
-			// "name": storeName,
-			// "location":{  
-			// 	"street_number":streetNumber,
-			// 	"street_name":streetName,
-			// 	"city_name": city,
-			// 	"state_name":state,
-			// 	"latitude":latitude,
-			// 	"longitude":longitude,
-			// 	"reference":addressReference
-			// },
-			// "external_id":externalStoreID
+			"name": storeName,
+			"location":{  
+				"street_number":streetNumber,
+				"street_name":streetName,
+				"city_name": city,
+				"state_name":state,
+				"latitude":latitude,
+				"longitude":longitude,
+				"reference":addressReference
+			},
+			"external_id":externalStoreID
 		}
 
 		console.log(storeJSON);
@@ -367,11 +367,13 @@ $(document).ready(function() {
 		// REVISA AQUÍ:
 		// Comprueba que el posJSON sea el adecuado para crear un POS integrado correctamente.
 
-		var posJSON ={"name":posName,
-					"external_store_id":externalStoreID,
-					"fixed_amount":false,
-					"category_id":category,
-					"external_id":externalPOSID};
+		var posJSON =
+				{"name":posName,
+					"external_store_id": externalStoreID,
+					"fixed_amount": true,
+					"category": category,
+					"external_id": externalPOSID
+				};
 
 
 
@@ -397,15 +399,17 @@ var items = [{
 		    "title" : "Caffè Americano",
 		    "picture_url":"https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242",
 		    "description" : "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance. Pro Tip: For an additional boost, ask your barista to try this with an extra shot.",
-		    "unit_price" : 90,
-		    "quantity" : 1
+			"unit_price" : 90,
+			"currency_id" : "ARS",
+		    "quantity" : 2
 		  },
 		  {
 		  	"id":"sku011",
 		    "title" : "Caffè Misto",
 		    "picture_url":"https://globalassets.starbucks.com/assets/d668acbc691b47249548a3eeac449916.jpg?impolicy=1by1_wide_1242",
 		    "description" : "A one-to-one combination of fresh-brewed coffee and steamed milk add up to one distinctly delicious coffee drink remarkably mixed.",
-		    "unit_price" : 105,
+			"unit_price" : 105,
+			"currency_id" : "ARS",
 		    "quantity" : 1
 		  },
 		  {
@@ -413,7 +417,8 @@ var items = [{
 		    "title" : "Iced Lemon Loaf Cake",
 		    "picture_url":"https://globalassets.starbucks.com/assets/c636153c255049a487da5db5b9d5f631.jpg?impolicy=1by1_wide_1242",
 		    "description" : "This citrusy, buttery, moist lemon pound cake topped with a sweet icing creates an amazingly refreshing cake like never before.",
-		    "unit_price" : 125,
+			"unit_price" : 125,
+			"currency_id" : "ARS",
 		    "quantity" : 3
 		  }];
 

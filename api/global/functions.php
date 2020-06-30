@@ -8,12 +8,13 @@ $collector_id="586728271";
 $country_id="MLA";
 
 // No tocar el integrator_id para el ejercicio
-$integrator_id_test="XXXXXXX"; 
+$integrator_id_test = "XXXXXXX"; 
+
+// No tocar el integrator_id para el ejercicio
 
 $notificationJSON="";
 
 global $access_token,$collector_id,$notificationJSON,$country_id;
-
 
 // Función para hacer llamadas a la API
 // Method: get, post, put o delete
@@ -22,8 +23,8 @@ global $access_token,$collector_id,$notificationJSON,$country_id;
 // En el caso que no aplique enviar JSON poner ""
 
 
-function curl_call($method,$url,$json){
-	$integrator_id_test="";
+function curl_call($method, $url, $json = ""){
+    $integrator_id_test="";
 	$method = strtoupper($method);
 	$headers = array("Content-Type: application/json","X-integrator-id: $integrator_id_test");
     $ch = curl_init();

@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 // Crea una store
 
 header('Content-type: application/json');
@@ -17,6 +18,6 @@ $url="";
 $json = $_POST["json"];
 
 
-curl_call("put","https://api.mercadopago.com/users/$collector_id/store?access_token=$access_token",$json);
+curl_call("post","https://api.mercadopago.com/users/$collector_id/stores?access_token=$access_token",$json);
 
 ?>

@@ -15,7 +15,8 @@ global $access_token,$collector_id;
  // en base al external_id, collector_id y Json recibidos
  // Sustituye el método por su correspondiente: get, put, post, delete
 //  $url = "https://api.mercadopago.com/pos";
-    $url = "https://api.mercadopago.com/mpmobile/instore/qr/$collector_id/$external_id?t=0";
+
+    $url = "https://api.mercadolibre.com/mpmobile/instore/qr/$collector_id/$external_id?access_token=$access_token";
 
 curl_call("post",$url,$json);
 
